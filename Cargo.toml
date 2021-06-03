@@ -1,5 +1,5 @@
 [package]
-name = "mut_view"
+name = "mutview"
 version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
 edition = "2018"
