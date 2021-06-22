@@ -30,6 +30,8 @@ pub fn derive(input: TokenStream) -> TokenStream {
                 return quote! {let (#name, buf) = MulByteView::mut_view(buf)};
             } else if ty_string.starts_with("ArrayView<") {
                 return quote! {let (#name, buf) = ArrayView::mut_view(buf)};
+            } else if ty_string.starts_with("VarArrayView<") {
+                return quote! {let (#name, buf) = VarArrayView::mut_view(buf, buf.len())};
             } else if ty_string.starts_with("Option") {
                 return quote! {let #name = <#ty as ::core::default::Default>::default()};
             } else {
